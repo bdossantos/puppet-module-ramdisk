@@ -1,0 +1,5 @@
+name 'benjamin-ramdisk'
+version '0.0.1'
+description 'Configure ramdisk with Puppet'
+project_page 'https://github.com/bdossantos/puppet-module-ramdisk'
+author 'Benjamin Dos Santos'
