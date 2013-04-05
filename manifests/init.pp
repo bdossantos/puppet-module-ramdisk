@@ -1,3 +1,41 @@
+# == Definition: ramdisk
+#
+# Configure ramdisk
+#
+# === Parameters
+#
+# $mounted  (u)mount the ramdisk
+#
+# $path     Path to mount the ramdisk
+#
+# $fstype   Filesystem type of ramdisk : tmpfs or ramfs
+#
+# $atboot   Mount fs at boot
+#
+# $size     Ramdisk size
+#
+# $mode     Ramdisk file mode
+#
+# $owner    Ramdisk owner
+#
+# $group    Ramdisk group owner
+#
+# === Examples
+#
+# ramdisk { 'php_sessions':
+#   ensure  => present,
+#   path    => '/var/lib/php5',
+#   atboot  => true,
+#   size    => '256M',
+#   mode    => '1733',
+#   owner   => 'root',
+#   group   => 'root',
+# }
+#
+# === Authors
+#
+# Benjamin Dos Santos <benjamin.dossantos@gmail.com>
+#
 define ramdisk(
   $ensure = 'present',
   $mount = 'mounted',
