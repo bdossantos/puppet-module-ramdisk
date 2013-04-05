@@ -35,3 +35,17 @@ ramdisk { 'php_sessions':
   group   => 'root',
 }
 ```
+
+## Running the tests
+
+Install the dependencies using [Bundler](http://gembundler.com):
+
+```bash
+bundle install
+```
+
+Run the following command :
+
+```bash
+bundle exec rake spec
+```
