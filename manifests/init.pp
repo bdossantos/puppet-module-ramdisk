@@ -71,7 +71,7 @@ define ramdisk(
     },
     device  => $path,
     fstype  => $fstype,
-    options => "size=${size},mode=${mode}",
+    options => "size=${size},mode=${mode},uid=${owner},gid=${group}",
     atboot  => $atboot,
   }
 }
