@@ -69,7 +69,7 @@ define ramdisk(
       directory => mounted,
       default   => absent,
     },
-    device  => $path,
+    device  => 'tmpfs',
     fstype  => $fstype,
     options => "size=${size},mode=${mode},uid=${owner},gid=${group}",
     atboot  => $atboot,
