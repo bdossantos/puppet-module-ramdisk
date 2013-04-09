@@ -26,9 +26,9 @@ describe 'ramdisk', :type => :defined do
   it do
     should contain_mount('/var/lib/php5').with({
       'ensure'  => 'mounted',
-      'device'  => '/var/lib/php5',
+      'device'  => 'tmpfs',
       'fstype'  => 'tmpfs',
-      'options' => "size=128M,mode=1733",
+      'options' => "size=128M,mode=1733,uid=root,gid=root",
       'atboot'  => true,
     })
   end
