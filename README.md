@@ -1,5 +1,7 @@
 # Puppet ramdisk module
 
+[![Build Status](https://secure.travis-ci.org/bdossantos/puppet-module-ramdisk.png)](http://travis-ci.org/bdossantos/puppet-module-ramdisk)
+
 Configure [ramdisk](https://wiki.archlinux.org/index.php/Ramdisk) with Puppet.
 
 Tested on Debian GNU/Linux 6.0 Squeeze with Puppet 2.7.
