@@ -57,18 +57,20 @@ define ramdisk(
     $real_ensure = 'absent'
   }
 
-  file { $path:
-    ensure  => $real_ensure,
-    mode    => $mode,
-    owner   => $owner,
-    group   => $group,
-  } ->
+  $mount_ensure = $real_ensure ? {
+    'directory' => mounted,
+    default     => absent,
+  }
 
-  mount { $path:
-    ensure  => $real_ensure ? {
-      directory => mounted,
-      default   => absent,
-    },
+  file { $path:
+    ensure => $real_ensure,
+    mode   => $mode,
+    owner  => $owner,
+    group  => $group,
+  }
+
+  -> mount { $path:
+    ensure  => $mount_ensure,
     device  => 'tmpfs',
     fstype  => $fstype,
     options => "size=${size},mode=${mode},uid=${owner},gid=${group}",
