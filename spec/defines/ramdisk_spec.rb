@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'ramdisk', :type => :defined do
+describe 'ramdisk', :type => :define do
   let(:title) { 'ramdisk' }
   let(:facts) { {:kernelmajversion => '2.6'} }
   let(:params) do {
